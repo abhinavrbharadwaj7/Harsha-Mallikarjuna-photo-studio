@@ -6,7 +6,7 @@
    font-size: 15px;
    line-height: 1.6;
    color: #fff;
-   background-color: #1f2029;
+   background-color: #0a0a0a;
    overflow: hidden;
    height: 100vh;
    -webkit-transition: all 300ms linear;
@@ -86,7 +86,7 @@
    display: block;
    overflow: hidden;
    height: 100vh;
-   background-image: url('https://assets.codepen.io/1462889/photo.jpeg');
+   background-image: url('');
    background-size: cover;
    background-position: center;
    transform: scale(1) rotateX(0);
