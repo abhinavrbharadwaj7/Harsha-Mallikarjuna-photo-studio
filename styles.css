@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+ body{
+   font-family: 'Poppins', sans-serif;
+   font-weight: 300;
+   font-size: 15px;
+   line-height: 1.6;
+   color: #fff;
+   background-color: #1f2029;
+   overflow: hidden;
+   height: 100vh;
+   -webkit-transition: all 300ms linear;
+   transition: all 300ms linear;
+   perspective: 800px;
+ }
+ a {
+   cursor: pointer;
+ }
+ a:hover {
+   text-decoration: none;
+ }
+ ::selection {
+   color: #c4c3ca;
+   background-color: #000;
+ }
+ ::-moz-selection {
+   color: #c4c3ca;
+   background-color: #000;
+ }
+
+ /* #Cursor
+ ================================================== */
+
+ .cursor,
+ .cursor2,
+ .cursor3{
+   position: fixed;
+   border-radius: 50%;
+   transform: translateX(-50%) translateY(-50%);
+   pointer-events: none;
+   left: -100px;
+   top: 50%;
+   mix-blend-mode: difference;
+   -webkit-transition: all 300ms linear;
+   transition: all 300ms linear;
+ }
+ .cursor{
+   background-color: #fff;
+   height: 0;
+   width: 0;
+   z-index: 99999;
+ }
+ .cursor2,.cursor3{
+   height: 36px;
+   width: 36px;
+   z-index:99998;
+   -webkit-transition:all 0.3s ease-out;
+   transition:all 0.3s ease-out
+ }
+ .cursor2.hover,
+ .cursor3.hover{
+   -webkit-transform:scale(2) translateX(-25%) translateY(-25%);
+   transform:scale(2) translateX(-25%) translateY(-25%);
+   border:none
+ }
+ .cursor2{
+   border: 2px solid #fff;
+ }
+ .cursor2.hover{
+   background: rgba(255,255,255,1);
+   border-color: transparent;
+ }
+
+ @media screen and (max-width: 1200px){
+   .cursor,.cursor2,.cursor3{
+     display: none
+   }
+ }
+
+ /* #Primary style
+ ================================================== */
+
+ .hero-section {
+     position: relative;
+   width: 100%;
+   display: block;
+   overflow: hidden;
+   height: 100vh;
+   background-image: url('https://assets.codepen.io/1462889/photo.jpeg');
+   background-size: cover;
+   background-position: center;
+   transform: scale(1) rotateX(0);
+   box-shadow: 0 0 40px rgba(0,0,0,0.2);
+   -webkit-transition: all 300ms linear;
+   transition: all 300ms linear;
+   -webkit-transition-delay: 400ms;
+   transition-delay: 400ms;
+   transform-origin: center top;
+ }
+ .hero-section h1{
+     color: #fff;
+   font-size: 8vw;
+   line-height: 1;
+   font-weight: 900;
+ }
+ .hero-section .dancing{
+   letter-spacing: 1px;
+   color: #ffeba7;
+   font-size: 25px;
+   line-height: 1;
+   font-weight: 700;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   transform: translateY(-175px) rotate(-45deg);
+   z-index: 2;
+ }
+ .hero-section .dancing span{
+   padding: 8px 15px;
+   padding-right: 10px;
+   display: inline-block;
+   border-radius: 5px;
+   background-color: #102770;
+ }
+ @media screen and (max-width: 580px){
+   .hero-section .dancing{
+     font-size: 18px;
+   }
+ }
+ .hero-section p{
+   font-size: 20px;
+   line-height: 1;
+   font-weight: 700;
+   color: #ffeba7;
+ }
+ .hero-section p span{
+   margin-left: 15px;
+   margin-right: 15px;
+   position: relative;
+   display: inline-block;
+   cursor: pointer;
+ }
+
+ body.about-on .hero-section {
+   transform: scale(0.75);
+   -webkit-transition-delay: 0ms;
+   transition-delay: 0ms;
+ }
+ body.contact-on .hero-section {
+   transform: scale(0.75);
+   -webkit-transition-delay: 0ms;
+   transition-delay: 0ms;
+ }
+ body.travel-on .hero-section {
+   transform: rotateX(-10deg);
+   -webkit-transition-delay: 0ms;
+   transition-delay: 0ms;
+ }
+ body.wildlife-on .hero-section {
+   transform: rotateX(-10deg);
+   -webkit-transition-delay: 0ms;
+   transition-delay: 0ms;
+ }
+ body.nature-on .hero-section {
+   transform: rotateX(-10deg);
+   -webkit-transition-delay: 0ms;
+   transition-delay: 0ms;
+ }
+ .about-text {
+     position: absolute;
+   font-size: 30px;
+   line-height: 1;
+   opacity: 0.5;
+   font-weight: 700;
+   color: #ffeba7;
+   letter-spacing: 2px;
+   top: 50%;
+   left: 20px;
+   cursor: pointer;
+   z-index: 2;
+   -webkit-writing-mode: vertical-lr;
+   writing-mode: vertical-lr;
+   transform: translateY(-50%);
+   -webkit-transition: all 200ms linear;
+   transition: all 200ms linear;
+ }
+ .about-text:hover {
+   opacity: 1;
+ }
+ .about-section {
+     position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: block;
+   overflow: hidden;
+   height: 100vh;
+   background-color: #102770;
+   transform: translateX(-100%);
+   -webkit-transition: all 300ms linear;
+   transition: all 300ms linear;
+   z-index: 10;
+ }
+ body.about-on .about-section {
+   transform: translateX(0);
+   -webkit-transition-delay: 400ms;
+   transition-delay: 400ms;
+ }
+ .about-close {
+     position: absolute;
+   top: 20px;
+   right: 20px;
+   width: 30px;
+   display: block;
+   overflow: hidden;
+   height: 30px;
+   -webkit-transition: all 200ms linear;
+   transition: all 200ms linear;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 36px 36px;
+   background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+   cursor: pointer;
+   z-index: 11;
+ }
+ .about-close:hover {
+     transform: rotate(90deg);
+ }
+ .section-center {
+     position: absolute;
+   width: 100%;
+   left: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 1;
+ }
+ .about-section img {
+     width: 240px;
+   height: 240px;
+   border-radius: 50%;
+   display: block;
+   margin: 0 auto;
+   box-shadow: 0 6px 25px rgba(255,235,167,.35);
+ }
+ .about-section p {
+   letter-spacing: 1px;
+   color: #fff;
+   font-size: 16px;
+   font-weight: 500;
+ }
+ .about-section p span {
+   letter-spacing: 1px;
+   color: #ffeba7;
+   font-size: 20px;
+   font-weight: 700;
+ }
+
+ .contact-text {
+     position: absolute;
+   font-size: 30px;
+   line-height: 1;
+   opacity: 0.5;
+   font-weight: 700;
+   color: #ffeba7;
+   letter-spacing: 2px;
+   top: 50%;
+   right: 20px;
+   cursor: pointer;
+   z-index: 2;
+   -webkit-writing-mode: vertical-lr;
+   writing-mode: vertical-lr;
+   transform: translateY(-50%) rotate(180deg);
+   -webkit-transition: all 200ms linear;
+   transition: all 200ms linear;
+ }
+ .contact-text:hover {
+   opacity: 1;
+ }
+ .contact-section {
+     position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   display: block;
+   overflow: hidden;
+   height: 100vh;
+   background-color: #102770;
+   transform: translateX(100%);
+   -webkit-transition: all 300ms linear;
+   transition: all 300ms linear;
+   z-index: 10;
+ }
+ body.contact-on .contact-section {
+   transform: translateX(0);
+   -webkit-transition-delay: 400ms;
+   transition-delay: 400ms;
+ }
+ .contact-close {
+     position: absolute;
+   top: 20px;
+   right: 20px;
+   width: 30px;
+   display: block;
+   overflow: hidden;
+   height: 30px;
+   -webkit-transition: all 200ms linear;
+   transition: all 200ms linear;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 36px 36px;
+   background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+   cursor: pointer;
+   z-index: 11;
+ }
+ .contact-close:hover {
+     transform: rotate(90deg);
+ }
+ .contact-section a{
+     margin: 0 auto;
+   font-size: 32px;
+   font-weight: 900;
+   letter-spacing: 1px;
+   color: #fff;
+   display: inline-block;
+ }
+ .contact-section .social a{
+     margin-left: 8px;
+   margin-right: 8px;
+   font-size: 15px;
+   font-weight: 700;
+   letter-spacing: 1px;
+   color: #ffeba7;
+ }
+ @media screen and (max-width: 580px){
+   .contact-section a{
+     font-size: 17px;
+   }
+   .contact-section .social a{
+     margin-left: 3px;
+     margin-right: 3px;
+     font-size: 13px;
+     letter-spacing: 0;
+   }
+ }
+
+ .travel-section,
+ .wildlife-section,
+ .nature-section {
+     position: fixed;
+   top: 100%;
+   left: 0;
+   padding: 100px 0;
+   width: 100%;
+   height: 100vh;
+   display: block;
+   overflow-x: hidden;
+   overflow-y: auto;
+   background-color: #102770;
+   -webkit-transition: all 300ms linear;
+   transition: all 300ms linear;
+   z-index: 10;
+ }
+ .travel-close,
+ .wildlife-close,
+ .nature-close {
+     position: absolute;
+   top: 20px;
+   right: 20px;
+   width: 30px;
+   display: block;
+   overflow: hidden;
+   height: 30px;
+   -webkit-transition: all 200ms linear;
+   transition: all 200ms linear;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: 36px 36px;
+   background-image: url('http://www.ivang-design.com/svg-load/portfolio/close.svg');
+   cursor: pointer;
+   z-index: 11;
+ }
+ .travel-close:hover,
+ .wildlife-close:hover,
+ .nature-close:hover {
+     transform: rotate(90deg);
+ }
+ body.travel-on .travel-section {
+   top: 0;
+   -webkit-transition-delay: 400ms;
+   transition-delay: 400ms;
+ }
+ body.wildlife-on .wildlife-section {
+   top: 0;
+   -webkit-transition-delay: 400ms;
+   transition-delay: 400ms;
+ }
+ body.nature-on .nature-section {
+   top: 0;
+   -webkit-transition-delay: 400ms;
+   transition-delay: 400ms;
+ }
+ .travel-section img,
+ .wildlife-section img,
+ .nature-section img {
+   margin-top: 30px;
+     width: 100%;
+   height: auto;
+   display: block;
+   border-radius: 4px;
+   box-shadow: 0 0 20px rgba(0,0,0,0.4);
+ }
+ .travel-section h3,
+ .wildlife-section h3,
+ .nature-section h3 {
+   font-size: 7vw;
+   line-height: 1;
+   font-weight: 700;
+   letter-spacing: 1px;
+   color: #fff;
+ }
+ .travel-section p,
+ .wildlife-section p,
+ .nature-section p {
+   font-size: 14px;
+   line-height: 1.7;
+   letter-spacing: 1px;
+   font-weight: 500;
+ }
+ .travel-section p span,
+ .wildlife-section p span,
+ .nature-section p span {
+   font-size: 20px;
+   line-height: 1.3;
+   font-weight: 700;
+   color: #ffeba7;
+ }
+ /* #Link to page
+ ================================================== */
+
+ .logo {
+   position: fixed;
+   bottom: 30px;
+   right: 30px;
+   display: block;
+   z-index: 200000;
+   transition: all 250ms linear;
+ }
+ .logo img {
+   height: 26px;
+   width: auto;
+   display: block;
+   mix-blend-mode: difference;
+ }
+
+
+ @media (max-width: 1200px) {
+   .hero-section .dancing{
+     font-size: 15px;
+     transform: translateY(-80px) rotate(-45deg);
+   }
+ }
+
+ @media (max-width: 967px) {
+   .hero-section h1{
+     font-size: 11vw;
+   }
+   .hero-section p{
+     font-size: 18px;
+   }
+   .hero-section p span{
+     margin-left: 10px;
+     margin-right: 10px;
+   }
+   .travel-section h3,
+   .wildlife-section h3,
+   .nature-section h3 {
+     font-size: 13vw;
+   }
+ }
